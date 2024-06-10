@@ -6,11 +6,11 @@ def is_wrong_char(c): return not c.isalpha() and not c == " "
 
 def validate_s(str):
     """
-Validates string with a lambda function.
+    Validates string with a lambda function.
 
-Returns:
-    False if one of the character is not alphabetical or space.
-    Otherwise, True.
+    Returns:
+        False if one of the character is not alphabetical or space.
+        Otherwise, True.
     """
     for c in str:
         if is_wrong_char(c):
@@ -20,12 +20,12 @@ Returns:
 
 def validate_argv():
     """
-Validates arguments passed to the program
+    Validates arguments passed to the program
 
-Raises:
-    AssertionError:
-        if more than 1 arguments passed,
-        argument is not a valid format string
+    Raises:
+        AssertionError:
+            if more than 1 arguments passed,
+            argument is not a valid format string
     """
     if (len(sys.argv) != 2) or not validate_s(sys.argv[1]):
         raise AssertionError("the arguments are bad")
@@ -33,10 +33,10 @@ Raises:
 
 def convert_str_to_morse(str):
     """
-Converts string to morse code. String should be valid.
+    Converts string to morse code. String should be valid.
 
-Returns:
-    string with morse code.
+    Returns:
+        string with morse code.
     """
     result = ""
     NESTED_MORSE = {

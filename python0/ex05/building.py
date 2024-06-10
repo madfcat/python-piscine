@@ -5,10 +5,10 @@ import sys
 # https://stackoverflow.com/questions/58826614/how-to-capture-ctrld-when-you-have-already-typed-soemthing-in-raw-input-but-hav
 def building():
     """
-Counts letters in a string.
+    Counts letters in a string.
 
-Raises:
-AssertionError: If more than one argument is provided
+    Raises:
+    AssertionError: If more than one argument is provided
     """
     string = ""
     punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"

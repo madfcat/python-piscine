@@ -3,10 +3,10 @@ import sys
 
 def whatis():
     """
-Checks if integer is odd or even.
+    Checks if integer is odd or even.
 
-Raises:
-AssertionError: If more than one argument is provided
+    Raises:
+    AssertionError: If more than one argument is provided
     """
     if (len(sys.argv) > 2):
         raise AssertionError("more than one argument is provided")
