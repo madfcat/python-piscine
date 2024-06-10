@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "My first package creation"
+readme = "README.md"
+readme-content-type = "text/markdown"
+authors = [
+    { name = "Vladimir Shchukin", email = "91376232+madfcat@users.noreply.github.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.6"
+keywords = ["example", "package"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/madfcat/python-piscine"
+
+[tool.setuptools.packages.find]
+where = ["."]

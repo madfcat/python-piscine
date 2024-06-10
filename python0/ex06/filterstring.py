@@ -1,4 +1,3 @@
-from ft_filter import ft_filter
 import sys
 
 
@@ -29,7 +28,9 @@ Raises:
         first argument is not a valid format string,
         second argument is not an integer number
     """
-    if (len(sys.argv) != 3) or not validate_s(sys.argv[1]) or not sys.argv[2].isdigit():
+    if (len(sys.argv) != 3) or \
+            not validate_s(sys.argv[1]) or \
+            not sys.argv[2].isdigit():
         raise AssertionError("the arguments are bad")
 
 
