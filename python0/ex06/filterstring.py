@@ -2,12 +2,17 @@ from ft_filter import ft_filter
 import sys
 
 
-# def ispunct(c): return bool("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".find(c))
-
 def is_wrong_char(c): return not c.isalpha() and not c == " "
 
 
 def validate_s(str):
+    """
+Validates string with a lambda function.
+
+Returns:
+    False if one of the character is not alphabetical or space.
+    Otherwise, True.
+    """
     for c in str:
         if is_wrong_char(c):
             return False
@@ -21,7 +26,7 @@ Validates arguments passed to the program
 Raises:
     AssertionError:
         if more than 2 arguments passed,
-        first argument is not a valid string,
+        first argument is not a valid format string,
         second argument is not an integer number
     """
     if (len(sys.argv) != 3) or not validate_s(sys.argv[1]) or not sys.argv[2].isdigit():
