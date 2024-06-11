@@ -1,7 +1,7 @@
 import sys
 
 
-is_wrong_char = lambda c: not c.isalpha() and not c == " "
+is_wrong_char = (lambda c: not c.isalpha() and not c == " ")
 
 
 def validate_s(str):
