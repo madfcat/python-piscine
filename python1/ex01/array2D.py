@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def slice_me(family: list, start: int, end: int) -> list:
     """
     Slice a 2D list (family) into a sublist based on the specified
@@ -15,7 +16,6 @@ def slice_me(family: list, start: int, end: int) -> list:
     list: A 2D list containing the sliced elements of the input list
     'family' from index 'start' to 'end'.
     """
-    arr1 = []
 
     try:
         arr1 = np.array(family)
@@ -26,4 +26,4 @@ def slice_me(family: list, start: int, end: int) -> list:
         return arr2
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
-    return arr1
+    return None
