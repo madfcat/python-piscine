@@ -2,21 +2,25 @@ import numpy as np
 from load_image import ft_load
 import matplotlib.pyplot as plt
 
-def rgb_to_gray(rgb):
+def rgb_to_grey(rgb):
     """
+    Converts rgb to not mapped grey
     """
-    gray = np.dot(rgb[...,:3], [0.2989, 0.5870, 0.1140]).astype(np.uint8)
-    return np.stack([gray], axis=-1)
+    grey = np.dot(rgb[...,:3], [0.2989, 0.5870, 0.1140]).astype(np.uint8)
+    return np.stack([grey], axis=-1)
 
 def zoom(image):
     """
+    Crops an image to vertically from 100px to 500px and horizontally from 440 to 840px.
+    Returns: 400x400 px image array
     """
     new_image = image[100:500, 440:840]
 
     return new_image
 
-def transpose_square(matrix):
+def transpose(matrix):
     """
+    Transposes a matrix
     """
     rows = len(matrix)
     cols = len(matrix[0])
@@ -35,7 +39,7 @@ def main():
     try:
         image = ft_load("animal.jpeg")
         
-        new_image = rgb_to_gray(image)
+        new_image = rgb_to_grey(image)
         new_image = zoom(new_image)
 
         shape_short = list(new_image.shape)
@@ -43,7 +47,7 @@ def main():
         print("The shape of image is:", new_image.shape, " or ", tuple(shape_short))
         print(new_image)
 
-        new_image = transpose_square(new_image)
+        new_image = transpose(new_image)
         new_image_2d = new_image.reshape(new_image.shape[0], new_image.shape[1])
         print("New shape after Transpose:", new_image_2d.shape)
         print(new_image_2d)
