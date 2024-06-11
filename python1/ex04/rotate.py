@@ -43,7 +43,7 @@ def main():
         print("The shape of image is:", new_image.shape, " or ", tuple(shape_short))
         print(new_image)
 
-        new_image = transpose(new_image)
+        new_image = transpose_square(new_image)
         new_image_2d = new_image.reshape(new_image.shape[0], new_image.shape[1])
         print("New shape after Transpose:", new_image_2d.shape)
         print(new_image_2d)
