@@ -24,12 +24,18 @@ def give_bmi(
     - The function processes pairs of height and weight up to the length of
     the shorter list.
     """
-    result = []
+    try:
+        result = []
 
-    for x in range(min(len(height), len(weight))):
-        result.append(weight[x] / (height[x] ** 2))
+        for x in range(min(len(height), len(weight))):
+            result.append(weight[x] / (height[x] ** 2))
+        
+        return result
 
-    return result
+    except Exception as e:
+        print(f"{type(e).__name__}: {e}")
+
+    return None
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
@@ -47,5 +53,11 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     list[bool]: A list of boolean values where each element is True if the
     corresponding BMI value exceeds the limit, and False otherwise.
     """
-    return [x > limit for x in bmi]
+    try:
+        return [x > limit for x in bmi]
+
+    except Exception as e:
+        print(f"{type(e).__name__}: {e}")
+
+    return None
 
