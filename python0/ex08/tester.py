@@ -24,3 +24,12 @@ print()
 for elem in tqdm(range(3, 71, 3)):
     sleep(0.505)
 print()
+print()
+
+for elem in ft_tqdm("hello"):
+    sleep(0.505)
+print()
+for elem in tqdm("hello"):
+    sleep(0.505)
+print()
+print()
