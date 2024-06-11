@@ -36,5 +36,3 @@ def ft_tqdm(lst: range) -> None:
 
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
-        
-    

@@ -24,6 +24,8 @@ def slice_me(family: list, start: int, end: int) -> list:
         print(f"My new shape is: {arr1.shape}")
         arr2 = arr1.tolist()
         return arr2
+
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
+
     return None
