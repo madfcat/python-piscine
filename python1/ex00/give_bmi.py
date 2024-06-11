@@ -29,7 +29,7 @@ def give_bmi(
 
         for x in range(min(len(height), len(weight))):
             result.append(weight[x] / (height[x] ** 2))
-        
+
         return result
 
     except Exception as e:
@@ -60,4 +60,3 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         print(f"{type(e).__name__}: {e}")
 
     return None
-

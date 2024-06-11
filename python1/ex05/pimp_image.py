@@ -1,5 +1,4 @@
 import numpy as np
-from load_image import ft_load
 import matplotlib.pyplot as plt
 
 
@@ -8,7 +7,7 @@ def ft_invert(array) -> np.ndarray:
     Inverts the color of the image received.
     """
     inverted = 255 - array
-    
+
     try:
         plt.imshow(inverted)
         plt.show()
@@ -24,13 +23,13 @@ def ft_red(array) -> np.ndarray:
     """
     red = array.copy()
     red[:, :, 1:] = 0
-    
+
     try:
         plt.imshow(red)
         plt.show()
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
-    
+
     return red
 
 
@@ -41,13 +40,13 @@ def ft_green(array) -> np.ndarray:
     green = array.copy()
     green[:, :, 0] = 0
     green[:, :, 2] = 0
-    
+
     try:
         plt.imshow(green)
         plt.show()
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
-    
+
     return green
 
 
@@ -79,15 +78,16 @@ def ft_grey(array) -> np.ndarray:
     """
     # Compute the average of the RGB values along the third axis
     grey = np.mean(array, axis=2)
-    # Stack the grayscale values along the third axis to create a 3-channel grayscale image
+    # Stack the grayscale values along the third axis to create a 3-channel
+    # grayscale image
     grey = np.stack([grey, grey, grey], axis=-1)
     # Normalize pixel values to the range [0, 1]
     grey = grey.astype(float) / 255
-    
+
     try:
         plt.imshow(grey)
         plt.show()
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
-    
+
     return grey
