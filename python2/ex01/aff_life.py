@@ -26,6 +26,7 @@ def show_country_graph(country_name: str) -> None:
         id_vars=['country'], var_name='year', value_name='value')
     country_data_melted['year'] = pd.to_numeric(
         country_data_melted['year'])
+    country_data_melted['value'] = pd.to_numeric(country_data_melted['value'])
 
     # Create the plot
     plt.figure(figsize=(8, 6))
@@ -48,7 +49,7 @@ def show_country_graph(country_name: str) -> None:
 
 def main():
     try:
-        show_country_graph('Finland')
+        show_country_graph('France')
 
     except Exception as e:
         print(f"{type(e).__name__}: {e}")

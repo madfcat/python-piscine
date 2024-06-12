@@ -72,7 +72,7 @@ def main():
         # Plot the data
         for melted_filtered in df_melted_filtered:
             sns.lineplot(data=melted_filtered, x='year', y='value',
-                 label=melted_filtered['country'].iloc[0])
+                         label=melted_filtered['country'].iloc[0])
 
         # Set plot title and labels
         plt.title("Population Projections")
