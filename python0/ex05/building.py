@@ -48,6 +48,9 @@ def building():
 
 
 def main():
+    """
+    Main function that calls building function and handles exceptions
+    """
     sys.tracebacklimit = 0
     try:
         building()

@@ -48,8 +48,11 @@ def show_country_graph(country_name: str) -> None:
 
 
 def main():
+    """
+    Main function that calls the show_country_graph function with the country.
+    """
     try:
-        show_country_graph('France')
+        show_country_graph('Finland')
 
     except Exception as e:
         print(f"{type(e).__name__}: {e}")

@@ -35,6 +35,10 @@ def validate_argv():
 
 
 def main():
+    """
+    Main function that validates arguments and prints words that are longer
+    than n.
+    """
     sys.last_traceback = 0
 
     try:

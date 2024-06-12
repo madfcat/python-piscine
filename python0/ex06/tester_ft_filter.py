@@ -2,6 +2,9 @@ from ft_filter import ft_filter
 
 
 def more_than_five(x):
+    """
+    Returns True if x is greater than 5, otherwise False
+    """
     if x > 5:
         return True
     else:
@@ -9,11 +12,17 @@ def more_than_five(x):
 
 
 def print_arr(arr):
+    """
+    Prints the elements of the array
+    """
     for x in arr:
         print(x)
 
 
 def main():
+    """
+    Main function that demonstrates the use of the filter function
+    """
     print(filter.__doc__)
 
     print(ft_filter.__doc__)

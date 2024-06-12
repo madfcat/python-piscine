@@ -41,6 +41,10 @@ def transpose(matrix):
 
 
 def main():
+    """
+    Main function that loads an image, converts it to greyscale, crops it,
+    transposes it, reshapes it to 2D, and displays the image.
+    """
     try:
         image = ft_load("animal.jpeg")
 

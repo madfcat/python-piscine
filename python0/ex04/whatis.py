@@ -22,6 +22,9 @@ def whatis():
 
 
 def main():
+    """
+    Main function that calls whatis function and handles exceptions
+    """
     sys.tracebacklimit = 0
     try:
         whatis()

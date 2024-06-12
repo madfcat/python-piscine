@@ -23,6 +23,10 @@ def zoom(image):
 
 
 def main():
+    """
+    Main function that loads an image, converts it to greyscale, crops it,
+    and displays the image.
+    """
     try:
         image = ft_load("animal.jpeg")
         print(image)

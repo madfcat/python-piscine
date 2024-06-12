@@ -6,6 +6,9 @@ from load_csv import load
 
 
 def convert_to_numeric(value):
+    """
+    Convert the value to a numeric value.
+    """
     if value[-1] == 'M':
         return float(value[:-1]) * 1e6
     elif value[-1] == 'k':
@@ -14,10 +17,11 @@ def convert_to_numeric(value):
         return float(value)
 
 
-def get_country_data_melted(country_name: str) -> pd.DataFrame:
+def get_country_data_melted(country_name: str,
+                            df: pd.DataFrame) -> pd.DataFrame:
     """
+    Get country data in a long format.
     """
-    df = load("population_total.csv")
 
     # Filter the DataFrame for the specific country
     country_data = df[df['country'] == country_name]
@@ -35,6 +39,9 @@ def get_country_data_melted(country_name: str) -> pd.DataFrame:
 
 
 def main():
+    """
+    Create a line plot of the population projections from countries list.
+    """
     countries = ['Finland', 'Belgium']
     start_year = 1800
     end_year = 2050
@@ -48,7 +55,12 @@ def main():
             df_melted['year'] >= start_year) & (df_melted['year'] <= end_year)]
 
     try:
-        df_melted = list(map(get_country_data_melted, countries))
+
+        df = load("population_total.csv")
+
+        df_melted = list(map(lambda country:
+                             get_country_data_melted(country, df),
+                             countries))
 
         # Filter the data for certain years
         df_melted_filtered = list(map(lambda country_melted: filter_melted(
