@@ -1,5 +1,11 @@
 ## Create the virtual environment:
 
+You might need to call deactivate to activate system-wide Python environment
+```
+deactivate
+```
+
+Create virtual environment:
 ```
 python3 -m virtualenv .venv
 ```
@@ -32,4 +38,10 @@ pip list
 
 ```
 deactivate
+```
+
+## Create requirements.txt:
+
+```
+pip freeze > requirements.txt
 ```
