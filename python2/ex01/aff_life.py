@@ -6,6 +6,16 @@ from load_csv import load
 
 
 def show_country_graph(country_name: str) -> None:
+    """
+    Load life expectancy data for a specific country and plot a line graph.
+
+    Args:
+        country_name (str): The name of the country for which to display the
+        life expectancy data.
+
+    Returns:
+        None
+    """
     df = load("life_expectancy_years.csv")
 
     # Filter the DataFrame for the specific country
