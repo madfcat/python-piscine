@@ -35,6 +35,10 @@ def get_country_data_melted(country_name: str) -> pd.DataFrame:
 
 
 def main():
+    countries = ['Finland', 'Belgium']
+    start_year = 1800
+    end_year = 2050
+
     # Define a custom formatter function for the y-axis labels
     def millions_formatter(x, pos):
         return f'{x / 1e6:.0f}M'
@@ -44,40 +48,31 @@ def main():
             df_melted['year'] >= start_year) & (df_melted['year'] <= end_year)]
 
     try:
-        df_melted_1 = get_country_data_melted('Finland')
-        df_melted_2 = get_country_data_melted('Belgium')
+        df_melted = list(map(get_country_data_melted, countries))
 
-        start_year = 1800
-        end_year = 2050
         # Filter the data for certain years
-        df_melted_1_filtered = filter_melted(
-            df_melted_1, start_year, end_year)
-        df_melted_2_filtered = filter_melted(
-            df_melted_2, start_year, end_year)
+        df_melted_filtered = list(map(lambda country_melted: filter_melted(
+            country_melted, start_year, end_year), df_melted))
 
         # Create the plot
         plt.figure(figsize=(8, 6))
 
-        max_population = max(
-            df_melted_1_filtered['value'].max(),
-            df_melted_2_filtered['value'].max()
-        )
-
-        step_y = 20 * 1e6 if max_population > 20 * 1e6 else max_population / 5
-
         # Set the tick locations for the x-axis and y-axis
         ax = plt.gca()
         ax.xaxis.set_major_locator(MultipleLocator(40))
+        max_population = max(
+            melted['value'].max() for melted in df_melted_filtered
+        )
+        step_y = 20 * 1e6 if max_population > 20 * 1e6 else max_population / 5
         ax.yaxis.set_major_locator(MultipleLocator(step_y))
 
         # Apply the custom formatter to the y-axis
         ax.yaxis.set_major_formatter(FuncFormatter(millions_formatter))
 
         # Plot the data
-        sns.lineplot(data=df_melted_1_filtered, x='year', y='value',
-                     label=df_melted_1_filtered['country'].iloc[0])
-        sns.lineplot(data=df_melted_2_filtered, x='year', y='value',
-                     label=df_melted_2_filtered['country'].iloc[0])
+        for melted_filtered in df_melted_filtered:
+            sns.lineplot(data=melted_filtered, x='year', y='value',
+                 label=melted_filtered['country'].iloc[0])
 
         # Set plot title and labels
         plt.title("Population Projections")
