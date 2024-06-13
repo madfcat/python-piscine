@@ -1,8 +1,10 @@
 def try_except(num_list: list, func, name: str) -> None:
+    """This function takes a list of numbers, a function, and a string."""
     try:
         print(name, " : ", func(num_list))
-    except Exception as e:
+    except Exception:
         print("ERROR")
+
 
 def mean(num_list: list) -> float:
     """This function takes a list of numbers and returns the mean."""
@@ -46,10 +48,14 @@ def quartile(num_list: list) -> list:
 
     return [Q1, Q3]
 
+
 def var(num_list: list) -> float:
+    """This function takes a list of numbers and returns the variance."""
     return sum((x - mean(num_list)) ** 2 for x in num_list) / len(num_list)
 
+
 def std(variance: float) -> float:
+    """This function takes a variance and returns the standard deviation."""
     return (var(variance)) ** 0.5
 
 
