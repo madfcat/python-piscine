@@ -27,6 +27,8 @@ def ft_load(path: str) -> np.ndarray:
         image = plt.imread(path)
         print("The shape of image is:", image.shape)
         print(image)
+        plt.imshow(image)
+        plt.show()
 
         return image
 
