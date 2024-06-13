@@ -12,18 +12,16 @@ class Baratheon(Character):
         self.eyes = 'brown'
         self.hairs = 'dark'
 
-    @property
     def __str__(self):
         """Returns a string representation of the Baratheon character."""
-        return ("<bound method Baratheon.__str__ of Vector: "
-                f"('{self.family_name}','{self.eyes}', '{self.hairs}')>")
+        return ("Vector: "
+                f"('{self.family_name}','{self.eyes}', '{self.hairs}')")
 
-    @property
     def __repr__(self):
         """Returns a string representation for debugging purposes of the
         Baratheon character."""
-        return ("<bound method Baratheon.__repr__ of Vector: "
-                f"('{self.family_name}', '{self.eyes}', '{self.hairs}')>")
+        return ("Vector: "
+                f"('{self.family_name}', '{self.eyes}', '{self.hairs}')")
 
     def die(self):
         """Sets the character's alive status to False."""
@@ -41,18 +39,16 @@ class Lannister(Character):
         self.eyes = 'blue'
         self.hairs = 'light'
 
-    @property
     def __str__(self):
         """Returns a string representation of the Lannister character."""
-        return ("<bound method Baratheon.__str__ of Vector: "
-                f"('{self.family_name}', '{self.eyes}', '{self.hairs}')>")
+        return ("Vector: "
+                f"('{self.family_name}', '{self.eyes}', '{self.hairs}')")
 
-    @property
     def __repr__(self):
         """Returns a string representation for debugging purposes of the
         Lannister character."""
-        return ("<bound method Baratheon.__repr__ of Vector: "
-                f"('{self.family_name}', '{self.eyes}', '{self.hairs}')>")
+        return ("Vector: "
+                f"('{self.family_name}', '{self.eyes}', '{self.hairs}')")
 
     def die(self):
         """Sets the character's alive status to False."""
