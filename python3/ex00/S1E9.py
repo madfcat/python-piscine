@@ -16,12 +16,12 @@ class Character(ABC):
 
 
 class Stark(Character):
-    """Your docstring for Class Stark"""
+    """Your docstring for Class"""
 
-    def __init__(self, first_name,  *args, **kwargs):
-        """Your docstring for Stark Constructor"""
-        super().__init__(first_name,  *args, **kwargs)
+    def __init__(self, first_name, *args):
+        """Your docstring for Constructor"""
+        super().__init__(first_name, *args)
 
     def die(self):
-        """Your docstring for Stark Method"""
+        """Your docstring for Method"""
         self.is_alive = False
